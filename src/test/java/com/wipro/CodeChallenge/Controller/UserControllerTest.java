@@ -42,19 +42,19 @@ class UserControllerTest {
         Map<Integer, List<UserEntity>> userIdMap = list.stream().collect(Collectors.groupingBy(UserEntity::getUserId));
         Map<String, Integer> resultMap = new HashMap<>();
         userIdMap.forEach((key, value) -> resultMap.put("userId " + key, value.size()));
-        Mockito.when(service.userIdCount()).thenReturn(resultMap);
+        Mockito.when(service.userIdCounter()).thenReturn(resultMap);
         assertNotNull(controller.userIdCount());
     }
 
     @Test
     void userIdCount_RuntimeException_test(){
-        Mockito.when(service.userIdCount()).thenThrow(new RuntimeException("Got a Run Time exception"));
+        Mockito.when(service.userIdCounter()).thenThrow(new RuntimeException("Got a Run Time exception"));
         assertThrows(RuntimeException.class,()->controller.userIdCount());
     }
 
     @Test
     void userIdCount_NullPointerException_test(){
-        Mockito.when(service.userIdCount()).thenThrow(new NullPointerException("User not found"));
+        Mockito.when(service.userIdCounter()).thenThrow(new NullPointerException("User not found"));
         assertThrows(NullPointerException.class,()->controller.userIdCount());
     }
 

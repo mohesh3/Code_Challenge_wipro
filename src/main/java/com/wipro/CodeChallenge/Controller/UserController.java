@@ -18,7 +18,7 @@ public class UserController
     @GetMapping("/userIdCount")
     public Map<String, Integer> userIdCount()
     {
-        return service.userIdCount();
+        return service.userIdCounter();
     }
 
 //Mapping the endpoint for updated array item

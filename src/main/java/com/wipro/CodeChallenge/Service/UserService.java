@@ -45,7 +45,7 @@ public class UserService
     }
 
 //Logic for changing data 4 th array item of given link by hard coding
-    public List<UserEntity> changedData() throws NullPointerException
+    public List<UserEntity> changedData() throws RuntimeException
     {
         try
         {
@@ -65,12 +65,12 @@ public class UserService
         }
         catch (RuntimeException e)
         {
-            throw new NullPointerException("Got a Runtime Exception");
+            throw new RuntimeException("Got a Runtime Exception");
         }
     }
 
 // Logic for changing data at specified array index of given link by requesting parameter at endpoint
-    public List<UserEntity> changedData_param(int arrayIndex) throws NullPointerException
+    public List<UserEntity> changedData_param(int arrayIndex) throws RuntimeException
     {
         try
         {
@@ -90,7 +90,7 @@ public class UserService
         }
         catch (RuntimeException e)
         {
-            throw new NullPointerException("Got a Runtime Exception");
+            throw new RuntimeException("Got a Runtime Exception");
         }
     }
 }

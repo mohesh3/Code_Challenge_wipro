@@ -14,12 +14,14 @@ public class UserController
 {
     @Autowired
     UserService service;
+
 //Mapping end point for tally the unique userid's
     @GetMapping("/userIdCount")
     public Map<String, Integer> userIdCount()
     {
         return service.userIdCounter();
     }
+
 
 //Mapping the endpoint for updated array item
 
@@ -36,6 +38,7 @@ public class UserController
     {
         return service.changedData_param(arrayIndex);
     }
+
 
 }
 

@@ -47,19 +47,22 @@ class UserControllerTest {
     }
 
     @Test
-    void userIdCount_RuntimeException_test(){
+    void userIdCount_RuntimeException_test()
+    {
         Mockito.when(service.userIdCounter()).thenThrow(new RuntimeException("Got a Run Time exception"));
         assertThrows(RuntimeException.class,()->controller.userIdCount());
     }
 
     @Test
-    void userIdCount_NullPointerException_test(){
+    void userIdCount_NullPointerException_test()
+    {
         Mockito.when(service.userIdCounter()).thenThrow(new NullPointerException("User not found"));
         assertThrows(NullPointerException.class,()->controller.userIdCount());
     }
 
     @Test
-    void updatedUserList_test() {
+    void updatedUserList_test()
+    {
         UserEntity user=new UserEntity();
         List<UserEntity> list = new ArrayList<>(List.of(user));
         UserEntity user1=new UserEntity();
